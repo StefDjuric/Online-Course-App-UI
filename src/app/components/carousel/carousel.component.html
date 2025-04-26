@@ -1,0 +1,21 @@
+<div
+  *ngIf="images && images.length > 0"
+  class="carousel-container max-w-[1440px] mx-auto"
+>
+  <img
+    *ngFor="let image of images; let i = index"
+    [src]="image.imageSrc"
+    [alt]="image.imageAlt"
+    [ngClass]="{ 'image-active': selectedIdx === i }"
+    class="w-full h-[300px] lg:h-[600px] fade"
+  />
+  <div *ngIf="indicators" class="carousel-dot-container">
+    <span
+      *ngFor="let dot of images; let i = index"
+      class="dot"
+      [ngClass]="{ active: selectedIdx === i }"
+      (click)="selectImage(i)"
+    >
+    </span>
+  </div>
+</div>
