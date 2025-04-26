@@ -1,0 +1,60 @@
+<nav
+  class="mx-auto max-w-[1440px] px-6 lg:px-20 3xl:px-0 relative z-30 py-5 font-inter flex justify-between items-center"
+>
+  <!-- Logo -->
+  <a href="#" class="font-bold text-4xl text-[#800e13]">JaBa</a>
+
+  <!-- Nav links -->
+  <div class="hidden lg:flex lg:justify-center lg:items-center w-full">
+    <ul class="hidden lg:flex lg:justify-center lg:items-center gap-8 w-full">
+      <li
+        *ngFor="let link of NAV_LINKS"
+        class="text-lg 3xl:text-xl text-[#250902] hover:text-[#ad2831] hover:font-bold"
+      >
+        <a [href]="link.href">{{ link.label }}</a>
+      </li>
+    </ul>
+  </div>
+  <!-- End of Nav links -->
+
+  <!-- Container for search and log in buttons -->
+  <div class="hidden lg:flex lg:justify-between lg:items-center gap-10">
+    <!-- Search bar -->
+    <div class="hidden lg:flex lg:justify-between lg:items-center gap-2">
+      <img
+        src="../../../assets/magnifying-glass-solid.svg"
+        alt="search icon"
+        width="25"
+        height="25"
+        class="-mr-10"
+      />
+      <input
+        type="search"
+        name="searchBar"
+        id="searchBar"
+        placeholder="Search courses"
+        class="px-2 py-1 border-2 border-[#250902] rounded-lg appearance-none pl-8"
+      />
+    </div>
+    <!-- End of search bar -->
+
+    <!-- Buttons -->
+    <div class="hidden lg:flex lg:justify-between lg:items-center gap-4">
+      <app-button
+        styling="rounded-lg px-4 py-2 bg-[#640d14] hover:bg-[#38040e] hover:cursor-pointer text-nowrap w-full"
+        text="Log In"
+        type="button"
+      ></app-button>
+      <app-button
+        styling="rounded-lg px-4 py-2 bg-[#fca311] hover:cursor-pointer hover:bg-[#ee964b] text-nowrap w-full"
+        text="Sign Up"
+        type="button"
+      ></app-button>
+    </div>
+    <!-- End of buttons -->
+  </div>
+  <!-- End of container for search and buttons -->
+
+  <!-- Burger Mobile menu -->
+  <app-burger-menu></app-burger-menu>
+</nav>

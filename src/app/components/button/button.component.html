@@ -1,0 +1,11 @@
+<button
+  [ngClass]="styling"
+  [type]="type"
+  [disabled]="disabled"
+  (click)="onClick($event)"
+>
+  <div class="flex justify-center items-center gap-2">
+    <img *ngIf="IconSrc" [src]="IconSrc" width="25" height="25" alt="icon" />
+    <p class="font-inter text-lg text-white">{{ text }}</p>
+  </div>
+</button>
