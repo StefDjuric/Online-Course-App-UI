@@ -1,0 +1,39 @@
+<!-- Card container -->
+<div
+  class="w-[300px] h-[400px] border-2 border-gray-400 rounded-lg p-4 flex flex-col justify-between items-center gap-5 hover:cursor-pointer hover:shadow-2xl hover:w-[320px] hover:h-[420px] transition-all ease-in-out duration-300"
+>
+  <!-- Content container -->
+  <div class="flex flex-col justify-between gap-5 items-center w-full">
+    <!-- Plan name -->
+    <div
+      class="w-full flex justify-center items-center px-2 py-4 rounded-lg text-white font-bold"
+      [ngClass]="planColorStyling"
+    >
+      <p class="text-lg">{{ planName }}</p>
+    </div>
+    <!-- End of plan name -->
+
+    <!-- Pricing -->
+    <div class="">
+      <p class="text-gray-500 text-md">
+        <span class="font-bold text-black text-2xl">{{ price }}€</span>/mjesecu
+      </p>
+    </div>
+    <!-- End of Pricing -->
+
+    <!-- Perks section -->
+    <ul class="flex flex-col gap-3 text-gray-500 text-md text-center">
+      <li *ngFor="let perk of planPerks">
+        <p>{{ perk }}</p>
+      </li>
+    </ul>
+    <!-- End of Perks section -->
+  </div>
+  <app-button
+    text="Izaberi Plan"
+    styling="rounded-lg px-4 py-2 bg-[#fca311] hover:cursor-pointer hover:bg-[#ee964b] text-nowrap w-full"
+    type="button"
+  ></app-button>
+  <!-- End of Content container -->
+</div>
+<!-- End of Card container -->

@@ -1,4 +1,5 @@
 <app-carousel [autoSlide]="true"></app-carousel>
+<!-- Call to Action -->
 <section
   class="flex flex-col justify-center items-center text-center gap-4 mt-10"
 >
@@ -11,3 +12,36 @@
     styling="rounded-lg px-4 py-2 bg-[#640d14] hover:bg-[#38040e] hover:cursor-pointer text-nowrap w-full"
   ></app-button>
 </section>
+<!-- End of Call to Action -->
+
+<!-- Pricing Plans section -->
+<section class="flex flex-col gap-5 justify-center items-center mt-10 mb-15">
+  <h2 class="text-xl lg:text-2xl text-black font-bold">
+    Izaberite Plan za Uspjeh
+  </h2>
+  <p class="text-md text-gray-500 text-center">
+    Ne želite da kupujete kurseve jedan po jedan. Izaberite plan koji će vam
+    pomoći da brže ostvarite vaše ciljeve.
+  </p>
+  <div class="flex flex-col justify-center items-center gap-3 lg:flex-row">
+    <app-pricing-card
+      planName="Osnovni Plan"
+      price="9.99"
+      planColorStyling="bg-blue-500"
+      [planPerks]="basicPlanPerks"
+    ></app-pricing-card>
+    <app-pricing-card
+      planName="Pro Plan"
+      planColorStyling="bg-green-500"
+      [planPerks]="proPlanPerks"
+      price="19.99"
+    ></app-pricing-card>
+    <app-pricing-card
+      planName="Premijum Plan"
+      price="25.99"
+      planColorStyling="bg-yellow-500"
+      [planPerks]="premiumPlanPerks"
+    ></app-pricing-card>
+  </div>
+</section>
+<!-- End of Pricing Plans -->
