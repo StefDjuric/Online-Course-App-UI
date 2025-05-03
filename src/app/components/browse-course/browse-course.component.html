@@ -1,0 +1,76 @@
+<div
+  class="mx-auto max-w-[1440px] px-6 lg:px-20 3xl:px-0 flex flex-col gap-4 items-center justify-between text-center"
+>
+  <div class="flex flex-col gap-2">
+    <h2 class="text-black text-3xl font-bold">Istražite naše kurseve</h2>
+    <p class="text-md text-gray-500">
+      Otkrijte obilje naših kurseva napravljenih da poboljšaju vaše znanje i
+      vještine.
+    </p>
+  </div>
+  <div class="flex flex-col gap-2 p-4 bg-red-200" *ngIf="courses.length === 0">
+    <h2 class="text-black text-xl">Nema slobodnih kurseva</h2>
+    <p class="text-md text-gray-500">
+      Trenutno nemamo kurseva u ovoj kategoriji. Molimo vas pogledajte kasnije.
+    </p>
+  </div>
+  <!-- Course Cards section -->
+  <div
+    *ngIf="courses.length > 0"
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between items-center gap-3 mt-2"
+  >
+    <!-- Card -->
+    <div
+      *ngFor="let course of courses"
+      class="flex flex-col shadow-lg justify-between min-w-[220px] min-h-[300px] h-[700px] items-center border-2 border-gray-500 rounded-lg pb-4"
+    >
+      <!-- Course image -->
+      <div class="border-2 border-gray-500 w-full h-[200px] rounded-lg">
+        <img
+          [src]="course.thumbnail"
+          [alt]="course.title"
+          class="w-full h-[200px] rounded-lg"
+        />
+      </div>
+      <!-- End of Course image -->
+
+      <!-- Course content -->
+      <div
+        class="flex flex-col gap-5 justify-between items-center text-center text-gray-500 text-md p-4"
+      >
+        <!-- Course header -->
+        <div
+          class="flex flex-col justify-between items-center gap-2 text-black"
+        >
+          <h2 class="text-2xl">{{ course.title }}</h2>
+          <p class="text-2xl text-[#640d14] font-bold">
+            {{ formatPrice(course.price) }}€
+          </p>
+        </div>
+        <p class="">
+          {{ course.description }}
+        </p>
+        <!-- End of Course header -->
+        <!-- Details -->
+        <div class="flex flex-col gap-1 justify-between items-center">
+          <p class="">Duration: {{ course.duration }} hours</p>
+          <p class="">Type: {{ course.courseType }}</p>
+          <p class="">Seats available: {{ course.seatsAvailable || "N/A" }}</p>
+          <p class="text-black text-bold">
+            Rating: {{ course.userRating?.averageRating }}
+          </p>
+        </div>
+        <!-- End of Details -->
+      </div>
+      <!-- End of Course Content -->
+
+      <app-button
+        text="Pogledajte Detalje"
+        type="button"
+        styling="rounded-lg px-4 py-2 bg-[#640d14] hover:bg-[#38040e] hover:cursor-pointer text-nowrap w-full"
+      ></app-button>
+    </div>
+    <!-- End of card -->
+  </div>
+  <!-- End of Course Cards section -->
+</div>

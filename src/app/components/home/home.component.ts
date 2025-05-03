@@ -2,10 +2,18 @@ import { Component } from '@angular/core';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { ButtonComponent } from '../button/button.component';
 import { PricingCardComponent } from '../pricing-card/pricing-card.component';
+import { CourseCategoriesComponent } from '../course-categories/course-categories.component';
+import { BrowseCourseComponent } from '../browse-course/browse-course.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CarouselComponent, ButtonComponent, PricingCardComponent],
+  imports: [
+    CarouselComponent,
+    ButtonComponent,
+    PricingCardComponent,
+    CourseCategoriesComponent,
+    BrowseCourseComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

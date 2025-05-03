@@ -1,0 +1,26 @@
+<div class="flex flex-col justify-center items-center gap-2 text-center">
+  <h2 class="text-black text-2xl font-bold">
+    Sve vještine koje su vam potrebne na jednom mjestu
+  </h2>
+  <p class="text-gray-500 text-md">
+    Od kritičkih vještina do tehničkih tema, JaBa podržava vaš profesionalni
+    razvoj.
+  </p>
+  <!-- Wrapper -->
+  <div class="w-full max-w-5xl px-4">
+    <!-- Carousel Container -->
+    <div class="carousel-container w-full">
+      <app-course-category-card
+        Title="Svi Kursevi"
+        Description="Pogledajte razne kurseve pogodne za učenje i usavršavanje."
+      ></app-course-category-card>
+      <app-course-category-card
+        *ngFor="let category of categories"
+        [Title]="category.categoryName"
+        [Description]="category.description"
+      ></app-course-category-card>
+    </div>
+    <!-- End of Carousel Container -->
+  </div>
+  <!-- End of Wrapper -->
+</div>

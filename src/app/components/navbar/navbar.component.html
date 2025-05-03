@@ -11,7 +11,9 @@
         *ngFor="let link of NAV_LINKS"
         class="text-lg 3xl:text-xl text-[#250902] hover:text-[#ad2831] hover:font-bold"
       >
-        <a [href]="link.href">{{ link.label }}</a>
+        <a [routerLink]="[link.href]" routerLinkActive="router-link-active">{{
+          link.label
+        }}</a>
       </li>
     </ul>
   </div>

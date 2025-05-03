@@ -1,0 +1,108 @@
+import { Course } from '../models/Course';
+
+export const MOCK_COURSES: Course[] = [
+  {
+    id: 1,
+    title: 'ASP .NET COURSE',
+    description: 'MOCK DESCRIPTION FOR ASP.NET COURSE',
+    price: 10.99,
+    courseType: 'Online',
+    seatsAvailable: 3,
+    duration: 0.23,
+    categoryId: 1,
+    instructorId: 1,
+    instructorUserId: 25,
+    thumbnail:
+      'http://res.cloudinary.com/dznngeevh/image/upload/v1743432805/yhwe8tikjhcxo8zjtszm.jpg',
+    startDate: new Date(),
+    endDate: new Date(),
+    category: {
+      id: 1,
+      categoryName: 'Programming',
+      description: 'Programming category',
+    },
+    userRating: {
+      courseId: 1,
+      averageRating: 0.0,
+      totalRating: 0,
+    },
+  },
+  {
+    id: 2,
+    title: 'ASP .NET COURSE',
+    description:
+      'MOCK DESCRIPTION FOR ASP.NET COURSE asdjajfhajlsfnajslfnajslfasfalsfasfjlasf',
+    price: 10.99,
+    courseType: 'Online',
+    seatsAvailable: 3,
+    duration: 0.23,
+    categoryId: 1,
+    instructorId: 1,
+    instructorUserId: 25,
+    thumbnail:
+      'http://res.cloudinary.com/dznngeevh/image/upload/v1743432805/yhwe8tikjhcxo8zjtszm.jpg',
+    startDate: new Date(),
+    endDate: new Date(),
+    category: {
+      id: 1,
+      categoryName: 'Programming',
+      description: 'Programming category',
+    },
+    userRating: {
+      courseId: 2,
+      averageRating: 0.0,
+      totalRating: 0,
+    },
+  },
+  {
+    id: 3,
+    title: 'ASP .NET COURSE',
+    description: 'MOCK DESCRIPTION FOR ASP.NET COURSE',
+    price: 10.99,
+    courseType: 'Online',
+    seatsAvailable: 3,
+    duration: 0.23,
+    categoryId: 1,
+    instructorId: 1,
+    instructorUserId: 25,
+    thumbnail:
+      'http://res.cloudinary.com/dznngeevh/image/upload/v1743432805/yhwe8tikjhcxo8zjtszm.jpg',
+    startDate: new Date(),
+    endDate: new Date(),
+    category: {
+      id: 1,
+      categoryName: 'Programming',
+      description: 'Programming category',
+    },
+    userRating: {
+      courseId: 3,
+      averageRating: 0.0,
+      totalRating: 0,
+    },
+  },
+  {
+    id: 4,
+    title: 'ASP .NET COURSE',
+    description: 'MOCK DESCRIPTION FOR ASP.NET COURSE',
+    price: 10.99,
+    courseType: 'Online',
+    seatsAvailable: 3,
+    duration: 0.23,
+    categoryId: 1,
+    instructorId: 1,
+    instructorUserId: 25,
+    thumbnail: 'https://i.ytimg.com/vi/bpOSxM0rNPM/mqdefault.jpg',
+    startDate: new Date(),
+    endDate: new Date(),
+    category: {
+      id: 1,
+      categoryName: 'Programming',
+      description: 'Programming category',
+    },
+    userRating: {
+      courseId: 4,
+      averageRating: 0.0,
+      totalRating: 0,
+    },
+  },
+];
