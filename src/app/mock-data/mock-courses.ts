@@ -26,6 +26,29 @@ export const MOCK_COURSES: Course[] = [
       averageRating: 0.0,
       totalRating: 0,
     },
+    sessionDetails: [
+      {
+        id: 1,
+        title: 'Course Intro',
+        description: 'Introduction to ASP. NET',
+        courseId: 1,
+        videoOrder: 1,
+      },
+      {
+        id: 2,
+        title: 'Course Intermediate',
+        description: 'Intermideate to ASP. NET',
+        courseId: 1,
+        videoOrder: 1,
+      },
+      {
+        id: 3,
+        title: 'Course Advanced',
+        description: 'Advanced  ASP. NET',
+        courseId: 1,
+        videoOrder: 1,
+      },
+    ],
   },
   {
     id: 2,
@@ -36,7 +59,7 @@ export const MOCK_COURSES: Course[] = [
     courseType: 'Online',
     seatsAvailable: 3,
     duration: 0.23,
-    categoryId: 1,
+    categoryId: 2,
     instructorId: 1,
     instructorUserId: 25,
     thumbnail:
@@ -50,9 +73,25 @@ export const MOCK_COURSES: Course[] = [
     },
     userRating: {
       courseId: 2,
-      averageRating: 0.0,
-      totalRating: 0,
+      averageRating: 2.0,
+      totalRating: 3,
     },
+    sessionDetails: [
+      {
+        id: 4,
+        title: 'Course Intro',
+        description: 'Introduction to ASP. NET',
+        courseId: 2,
+        videoOrder: 1,
+      },
+      {
+        id: 5,
+        title: 'Course Intermediate',
+        description: 'Intermideate to ASP. NET',
+        courseId: 1,
+        videoOrder: 1,
+      },
+    ],
   },
   {
     id: 3,
@@ -62,7 +101,7 @@ export const MOCK_COURSES: Course[] = [
     courseType: 'Online',
     seatsAvailable: 3,
     duration: 0.23,
-    categoryId: 1,
+    categoryId: 3,
     instructorId: 1,
     instructorUserId: 25,
     thumbnail:
@@ -76,9 +115,32 @@ export const MOCK_COURSES: Course[] = [
     },
     userRating: {
       courseId: 3,
-      averageRating: 0.0,
-      totalRating: 0,
+      averageRating: 3.0,
+      totalRating: 1,
     },
+    sessionDetails: [
+      {
+        id: 6,
+        title: 'Course Intro',
+        description: 'Introduction to ASP. NET',
+        courseId: 3,
+        videoOrder: 1,
+      },
+      {
+        id: 7,
+        title: 'Course Intermediate',
+        description: 'Intermideate to ASP. NET',
+        courseId: 3,
+        videoOrder: 1,
+      },
+      {
+        id: 8,
+        title: 'Course Advanced',
+        description: 'Advanced  ASP. NET',
+        courseId: 3,
+        videoOrder: 1,
+      },
+    ],
   },
   {
     id: 4,
@@ -88,7 +150,7 @@ export const MOCK_COURSES: Course[] = [
     courseType: 'Online',
     seatsAvailable: 3,
     duration: 0.23,
-    categoryId: 1,
+    categoryId: 4,
     instructorId: 1,
     instructorUserId: 25,
     thumbnail: 'https://i.ytimg.com/vi/bpOSxM0rNPM/mqdefault.jpg',
@@ -101,8 +163,8 @@ export const MOCK_COURSES: Course[] = [
     },
     userRating: {
       courseId: 4,
-      averageRating: 0.0,
-      totalRating: 0,
+      averageRating: 4.5,
+      totalRating: 12,
     },
   },
 ];

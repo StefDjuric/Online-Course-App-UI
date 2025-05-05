@@ -1,3 +1,4 @@
+<!-- Carousel of Images -->
 <app-carousel [autoSlide]="true"></app-carousel>
 <!-- Call to Action -->
 <section
@@ -6,17 +7,21 @@
   <h1 class="text-2xl lg:text-3xl text-[#250902] font-bold text-center">
     Počnite učiti bitne vještine već od danas!
   </h1>
-  <app-button
-    text="Istražite kurseve"
-    type="button"
-    styling="rounded-lg px-4 py-2 bg-[#640d14] hover:bg-[#38040e] hover:cursor-pointer text-nowrap w-full"
-  ></app-button>
+  <a [routerLink]="['/course/category/0']" routerLinkActive="router-link-active"
+    ><app-button
+      text="Istražite kurseve"
+      type="button"
+      styling="rounded-lg px-4 py-2 bg-[#640d14] hover:bg-[#38040e] hover:cursor-pointer text-nowrap w-full"
+    ></app-button>
+  </a>
 </section>
 <!-- End of Call to Action -->
 
+<!-- Course categories -->
 <section class="mt-5">
-  <app-course-categories></app-course-categories>
+  <app-course-categories [viewType]="'tabs'"></app-course-categories>
 </section>
+<!-- End of Course categories -->
 
 <!-- Pricing Plans section -->
 <section class="flex flex-col gap-5 justify-center items-center mt-10 mb-15">

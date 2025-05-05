@@ -3,7 +3,7 @@ import { CarouselComponent } from '../carousel/carousel.component';
 import { ButtonComponent } from '../button/button.component';
 import { PricingCardComponent } from '../pricing-card/pricing-card.component';
 import { CourseCategoriesComponent } from '../course-categories/course-categories.component';
-import { BrowseCourseComponent } from '../browse-course/browse-course.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,7 @@ import { BrowseCourseComponent } from '../browse-course/browse-course.component'
     ButtonComponent,
     PricingCardComponent,
     CourseCategoriesComponent,
-    BrowseCourseComponent,
+    RouterLink,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

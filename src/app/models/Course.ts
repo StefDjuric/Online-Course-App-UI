@@ -39,8 +39,8 @@ export interface SessionDetails {
   courseId: number;
   title: string;
   description: string;
-  videoUrl: string;
-  videoOrder: number;
+  videoUrl?: string;
+  videoOrder?: number;
 }
 
 export interface InstructorModel {

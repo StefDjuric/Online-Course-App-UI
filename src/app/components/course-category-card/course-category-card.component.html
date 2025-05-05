@@ -1,11 +1,41 @@
+<!-- Col content direction -->
 <div
+  *ngIf="viewType === 'tabs'"
   class="w-[200px] h-[250px] flex flex-col justify-between py-5 items-center text-center rounded-lg border-2 border-gray-500 shadow-lg gap-5 mr-4 card hover:w-[220px] hover:shadow-2xl transition-all ease-in-out duration-300 mt-5"
 >
   <h2 class="text-lg text-black">{{ Title }}</h2>
   <p class="text-sm text-gray-500">{{ Description }}</p>
-  <app-button
-    text="Explore"
-    type="button"
-    styling="rounded-lg px-4 py-2 bg-[#640d14] hover:bg-[#38040e] hover:cursor-pointer text-nowrap w-full"
-  ></app-button>
+  <a
+    [routerLink]="[`/course/category/${categoryId}`]"
+    routerLinkActive="router-link-active"
+  >
+    <app-button
+      text="Explore"
+      type="button"
+      styling="rounded-lg px-4 py-2 bg-[#640d14] hover:bg-[#38040e] hover:cursor-pointer text-nowrap w-full"
+    ></app-button>
+  </a>
 </div>
+<!-- End of Col content direction -->
+
+<!-- Row content direction -->
+<div
+  *ngIf="viewType === 'list'"
+  class="w-full flex justify-between p-5 text-center rounded-lg border-2 border-gray-500 shadow-lg gap-5 mr-4 card hover:shadow-2xl mt-5"
+>
+  <div class="flex flex-col justify-between items-start">
+    <h2 class="text-lg text-black">{{ Title }}</h2>
+    <p class="text-sm text-gray-500">{{ Description }}</p>
+  </div>
+  <a
+    [routerLink]="[`/course/category/${categoryId}`]"
+    routerLinkActive="router-link-active"
+  >
+    <app-button
+      text="Explore"
+      type="button"
+      styling="rounded-lg px-4 py-2 bg-[#640d14] hover:bg-[#38040e] hover:cursor-pointer text-nowrap w-full"
+    ></app-button>
+  </a>
+</div>
+<!-- Row content direction -->

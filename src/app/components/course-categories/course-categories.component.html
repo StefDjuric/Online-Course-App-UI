@@ -7,9 +7,30 @@
     razvoj.
   </p>
   <!-- Wrapper -->
-  <div class="w-full max-w-5xl px-4">
+  <div *ngIf="viewType === 'tabs'" class="w-full max-w-5xl px-4">
     <!-- Carousel Container -->
     <div class="carousel-container w-full">
+      <app-course-category-card
+        Title="Svi Kursevi"
+        Description="Pogledajte razne kurseve pogodne za učenje i usavršavanje."
+        [viewType]="viewType"
+      ></app-course-category-card>
+      <app-course-category-card
+        *ngFor="let category of categories"
+        [Title]="category.categoryName"
+        [Description]="category.description"
+        [categoryId]="category.id"
+        [viewType]="viewType"
+      ></app-course-category-card>
+    </div>
+    <!-- End of Carousel Container -->
+  </div>
+  <!-- End of Wrapper -->
+
+  <!--  Row Wrapper -->
+  <div *ngIf="viewType === 'list'" class="w-full max-w-5xl px-4 mb-10">
+    <!-- Row Container -->
+    <div class="list-container w-full">
       <app-course-category-card
         Title="Svi Kursevi"
         Description="Pogledajte razne kurseve pogodne za učenje i usavršavanje."
@@ -18,9 +39,10 @@
         *ngFor="let category of categories"
         [Title]="category.categoryName"
         [Description]="category.description"
+        [categoryId]="category.id"
       ></app-course-category-card>
     </div>
-    <!-- End of Carousel Container -->
+    <!-- End of Row Container -->
   </div>
-  <!-- End of Wrapper -->
+  <!-- End of Row Wrapper -->
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CourseCategoryCardComponent } from '../course-category-card/course-category-card.component';
 import { CourseCategory } from '../../models/CourseCategory';
 import { MOCK_COURSE_CATEGORIES } from '../../mock-data/mock-course-categories';
@@ -12,7 +12,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './course-categories.component.css',
 })
 export class CourseCategoriesComponent {
-  categories: CourseCategory[] = [];
+  @Input() categories: CourseCategory[] = [];
+  @Input() viewType: 'list' | 'tabs' = 'list';
 
   constructor() {
     this.categories = MOCK_COURSE_CATEGORIES;

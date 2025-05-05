@@ -1,0 +1,139 @@
+<!-- Container for Course details content -->
+<div
+  class="mx-auto px-6 lg:px-15 3xl:px-0 max-w-[1440px] font-inter flex flex-col justify-center items-center w-full"
+>
+  <!-- Course Title -->
+  <div
+    class="p-5 w-full bg-[#640d14] text-white rounded-lg flex justify-center items-center"
+  >
+    <h1 class="text-2xl text">{{ course.title }}</h1>
+  </div>
+  <!-- End of Course Title -->
+
+  <img
+    [src]="course.thumbnail"
+    [alt]="course.title"
+    class="w-full h-[300px] mt-5"
+  />
+
+  <!-- Details and Description Container -->
+  <div
+    class="flex flex-col lg:flex-row lg:justify-between gap-10 items-center mt-8"
+  >
+    <!-- Course Details Container-->
+    <div
+      class="flex flex-col justify-between items-start p-4 bg-gray-200 rounded-lg"
+    >
+      <h2 class="text-lg text-[#640d14] font-bold">Detalji Kursa</h2>
+      <!-- Course Details Content -->
+      <div class="flex flex-col gap-2">
+        <p class="text-md text-black font-bold">
+          Vrijeme trajanja:
+          <span class="text-gray-500 font-normal"
+            >{{ course.duration }} sati</span
+          >
+        </p>
+        <p class="text-md text-black font-bold">
+          Slobodna mjesta:
+          <span class="text-gray-500 font-normal">{{
+            course.seatsAvailable
+          }}</span>
+        </p>
+        <p class="text-md text-black font-bold">
+          Početak:
+          <span class="text-gray-500 font-normal">{{ course.startDate }}</span>
+        </p>
+        <p class="text-md text-black font-bold">
+          Kraj:
+          <span class="text-gray-500 font-normal">{{ course.endDate }}</span>
+        </p>
+      </div>
+      <!-- End of Course Details Content -->
+    </div>
+    <!-- End of Course Details Container -->
+
+    <!-- Course Description Container -->
+    <div
+      class="flex flex-col min-h-[150px] items-start p-4 bg-gray-200 rounded-lg"
+    >
+      <h2 class="text-lg text-[#640d14] font-bold">Opis</h2>
+      <p class="text-md text-gray-500">{{ course.description }}</p>
+    </div>
+    <!-- End of Course Description Container -->
+  </div>
+  <!-- End of Details and Description Container -->
+
+  <!-- User Rating Container-->
+  <div
+    class="flex flex-col justify-between items-start p-4 bg-gray-200 rounded-lg mt-10"
+  >
+    <h2 class="text-lg text-[#640d14] font-bold"></h2>
+    <!-- User Rating Content -->
+    <div class="flex flex-col gap-2">
+      <p class="text-md text-black font-bold">
+        Prosječna ocjena: {{ course.userRating?.averageRating }} / 5
+      </p>
+      <p class="text-gray-500">
+        ({{ course.userRating?.totalRating }} ocjenjivanja)
+      </p>
+    </div>
+    <!-- End of User Rating Content -->
+  </div>
+  <!-- End of User Rating Container -->
+
+  <!-- Enroll Buttons -->
+  <app-button
+    *ngIf="course.price === 0"
+    text="Kurs je besplatan! Pridružite se sad!"
+    type="button"
+    styling="rounded-lg px-4 py-2 bg-[#640d14] hover:bg-[#38040e] hover:cursor-pointer text-nowrap w-full"
+  ></app-button>
+  <app-button
+    *ngIf="course.price > 0"
+    [text]="course.price.toString() + '€ Pridružite se sad!'"
+    type="button"
+    styling="rounded-lg px-4 py-2 bg-[#640d14] hover:bg-[#38040e] hover:cursor-pointer text-nowrap w-full mt-5 mb-5"
+  ></app-button>
+  <!-- End of Enroll Buttons -->
+
+  <!--  Session Container -->
+  <div class="flex justify-between gap-10 items-center my-8">
+    <!-- Sessions Container -->
+    <div
+      *ngIf="course.sessionDetails?.length! > 0"
+      class="flex flex-col min-h-[150px] items-start p-4 bg-gray-200 rounded-lg min-w-[200px] lg:min-w-[500px]"
+    >
+      <h2 class="text-lg text-[#640d14] font-bold">Detalji časova</h2>
+      <!-- Session Details container -->
+      <div
+        *ngFor="let session of course.sessionDetails"
+        class="flex flex-col justify-center items-center p-4"
+      >
+        <!-- Session Title -->
+        <div
+          class="p-5 flex justify-center items-center bg-[#fca311] text-white text-lg w-full min-w-[220px] lg:min-w-[450px]"
+        >
+          <p class="">{{ session.title }}</p>
+        </div>
+        <!-- End of Session Title -->
+        <p class="text-lg w-full">{{ session.description }}</p>
+      </div>
+      <!-- End of Session Details container -->
+
+      <div
+        *ngIf="
+          course.sessionDetails?.length === 0 ||
+          !course.sessionDetails === undefined
+        "
+        class="p-4 flex items-center text-black justify-center bg-red-300"
+      >
+        <p class="w-full">
+          Nismo našli časove na ovom kursu. Vratite se poslije!
+        </p>
+      </div>
+    </div>
+    <!-- End of Sessions Container -->
+  </div>
+  <!-- End of Session Container -->
+</div>
+<!-- End of Container for Course details content -->
