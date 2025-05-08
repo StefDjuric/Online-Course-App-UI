@@ -8,8 +8,8 @@ import {
 } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { Course } from '../../models/Course';
-import { MOCK_COURSES } from '../../mock-data/mock-courses';
 import { RouterLink } from '@angular/router';
+import { CourseService } from '../../services/course.service';
 
 @Component({
   selector: 'app-browse-course',
@@ -22,19 +22,29 @@ export class BrowseCourseComponent implements OnInit, OnChanges {
   courses: Course[] = [];
   @Input() categoryId: number = 0;
 
-  constructor() {
-    this.courses = MOCK_COURSES;
-  }
+  constructor(private courseService: CourseService) {}
 
   processCourse() {
     this.getCourseByCategory(this.categoryId);
   }
 
   getCourseByCategory(categoryId: number) {
-    if (categoryId === 0) return;
-    this.courses = MOCK_COURSES.filter(
-      (course) => course.categoryId === categoryId
-    );
+    if (categoryId === 0) this.getAllCourses();
+    else {
+      this.courseService
+        .getCoursesByCategoryId(categoryId)
+        .subscribe((data) => {
+          this.courses = data;
+          console.log('DAta is ', this.courses);
+        });
+    }
+  }
+
+  getAllCourses() {
+    this.courseService.getAllCourses().subscribe((data) => {
+      this.courses = data;
+      console.log('DAta is ', this.courses);
+    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {

@@ -3,7 +3,7 @@ import { CourseCategory } from './CourseCategory';
 export interface userRating {
   courseId: number;
   averageRating: number;
-  totalRating: number;
+  totalRatings: number;
 }
 
 export interface Course {
@@ -17,7 +17,6 @@ export interface Course {
   duration: number;
   categoryId: number;
   instructorId: number;
-  instructorUserId: number;
   startDate: Date;
   endDate: Date;
   category?: CourseCategory;
@@ -57,7 +56,7 @@ export interface CourseDetails {
   title: string;
   description: string;
   price: number;
-  courseType: string;
+  courseType: 'Online' | 'Offline';
   seatsAvailable: number;
   duration: number;
   categoryId: number;
